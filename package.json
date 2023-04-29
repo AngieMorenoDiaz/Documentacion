@@ -1,0 +1,15 @@
+{
+  "name": "documentacion",
+  "version": "0.0.1",
+  "description": "Aprendizaje de documentación",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Angie Valentina Moreno",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "typescript": "^5.0.4"
+  }
+}
