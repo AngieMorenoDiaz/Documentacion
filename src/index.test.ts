@@ -10,7 +10,7 @@ import App from "./Router"
 describe (
     "GET /",
     ()=>{
-        let app: App
+        let app:App
         beforeAll (
             ()=>{
                 app=new App()
@@ -18,7 +18,7 @@ describe (
             }
         )
 
-        afterAll (
+        afterAll(
             ()=>{
              app.close ()   
             }
@@ -27,9 +27,9 @@ describe (
         test(
             "Debe devolver un mensaje",
             async ()=>{
-                const res = await Request (app.app).get("/")
-                expect (res.statusCode).toEqual (200)
-                expect (res.text).toEqual ("Bienvenidos a typescript")
+                const res = await Request(app.app).get("/")
+                expect (res.statusCode).toEqual(200)
+                expect (res.text).toEqual("Bienvenidos a typescript")
 
             }
         )

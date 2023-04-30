@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+// eslint-disable-next-line semi
 import swaggerJSDoc from "swagger-jsdoc";
 
 export const swaggerOptions={
@@ -10,8 +12,8 @@ export const swaggerOptions={
         },
         servers:[
 			{
-				url:'http://localhost:3000',
-				description:'Servidor local de documentación'
+				url:"http://localhost:3000",
+				description:"Servidor local de documentación"
 			}
         ]
 

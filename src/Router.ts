@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable indent */
 import swaggerUi from "swagger-ui-express"
 import { swaggerSpec } from "./swagger.conf"
