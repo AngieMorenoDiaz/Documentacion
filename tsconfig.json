@@ -1,0 +1,17 @@
+{
+      
+    "compilerOptions": {
+        "module": "CommonJS",
+        "esModuleInterop":true,
+        "target": "ES6",
+        "rootDir": "src",
+        "outDir": "dist",
+        "strict": true,
+        
+    },
+    
+    "include": ["scr/**/*"],
+    "exclude": ["node_modules"],
+    
+}
+    
