@@ -1,12 +1,20 @@
-import swaggerUi from 'swagger-ui-express'
-import { swaggerSpec } from './swagger.conf'
-import express,{Application, Request, Response} from 'express'
-import { request } from 'http'
+/* eslint-disable indent */
+import swaggerUi from "swagger-ui-express"
+import { swaggerSpec } from "./swagger.conf"
+import express,{Application, Request, Response} from "express"
 
+/**
+ * @author Angie Valentina Moreno
+ * @description Clase inicial para aprender a manejar rutas y documentacion
+ */
 class App{
     //Atributos
     public app:any
     private server:any
+
+/**
+ * @author Angie Valentina Moreno
+ */
 
     constructor(){
         this.app=express()
@@ -38,7 +46,7 @@ class App{
     public start():void{
             this.server=this.app.listen(
                 3000,
-                ()=>{console.log('El servidor esta escuchando en el puerto 3000')}
+                ()=>{console.log("El servidor esta escuchando en el puerto 3000")}
             )
     }
     public close():void{
