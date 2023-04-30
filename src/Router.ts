@@ -14,20 +14,17 @@ class App{
         this.app.get(
             "/",
             (req:Request, res:Response)=>{
-                res.send("Bienbenidos a typescript")
+                res.send("Bienvenidos a typescript")
             }
-
         )
-        
-
     }
     
     public start():void{
-            this.app.listen(
+            this.server=this.app.listen(
                 3000,
                 ()=>{console.log("El servidor esta escuchando en el puerto 3000")}
             )
-        }
+    }
 }
 
 export default App
