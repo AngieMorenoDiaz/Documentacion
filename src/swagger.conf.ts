@@ -9,10 +9,10 @@ export const swaggerOptions={
             description:"Esta API soporta la operacion de la IPS Atenea",
         },
         servers:[
-            {
-                url:"http:localhost:3000",
-                description:"Servidor local de documentacion"
-            }
+			{
+				url:'http://localhost:3000',
+				description:'Servidor local de documentación'
+			}
         ]
 
     },
