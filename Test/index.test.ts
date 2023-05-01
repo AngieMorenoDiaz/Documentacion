@@ -6,12 +6,12 @@
 //Importar bibliotecas
 
 import Request from "supertest"
-import App from "./App"
+import App from "../src/App"
 
 describe (
     "GET /",
     ()=>{
-        let app:App
+        let app: App
         
         beforeAll (
             ()=>{
