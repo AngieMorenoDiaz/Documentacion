@@ -1,2 +1,5 @@
-export const testEnvironment = "node"
-export const preset = "ts-jest"
+/* eslint-disable no-undef */
+module.esports={
+    preset:"ts-jest",
+    testEnvironment:"node"
+}

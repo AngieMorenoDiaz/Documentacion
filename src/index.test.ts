@@ -1,3 +1,4 @@
+/* eslint-disable semi */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable indent */
@@ -5,12 +6,13 @@
 //Importar bibliotecas
 
 import Request from "supertest"
-import App from "./Router"
+import App from "./App"
 
 describe (
     "GET /",
     ()=>{
         let app:App
+        
         beforeAll (
             ()=>{
                 app=new App()
