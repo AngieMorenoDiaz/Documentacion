@@ -10,32 +10,39 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Paciente{
-  cedula Int @id
-  nombre String
-  apellido Spring
+model Paciente {
+  cedula          Int      @id
+  nombre          String
+  apellido        String
   fechaNacimiento DateTime
-  telefono String
+  telefono        String
+  Cita            Cita[]
 }
 
-model Medico{
-  tarjetaProfesional Int @id
-  nombre String
-  apellido Spring
-  fechaNacimiento DateTime
-  correo String
-  IdSpecialidad Int 
+model Medico {
+  tarjetaProfesional         Int           @id
+  nombre                     String
+  apellido                   String
+  fechaNacimiento            DateTime
+  correo                     String
+  IdEspecialidad             Int
+  cita                       Cita[]
+  Especialidad               Especialidad? @relation(fields: [especialidadIdEspecialidad], references: [IdEspecialidad])
+  especialidadIdEspecialidad Int?
 }
 
-model Cita{
-  idCita Int @id
-  fecha DateTime
-  cedulaPaciente Int
-  tarjetaProfesional Int
+model Cita {
+  idCita                   Int       @id
+  fecha                    DateTime
+  cedulaPaciente           Int
+  medicoTarjetaProfesional Int
+  Paciente                 Paciente? @relation(fields: [pacienteCedula], references: [cedula])
+  pacienteCedula           Int?
+  Medico                   Medico    @relation(fields: [medicoTarjetaProfesional], references: [tarjetaProfesional])
 }
 
-model Especialidad{
-  IdSpecialidad Int @id
-  nombre Spring
-    
+model Especialidad {
+  IdEspecialidad Int      @id
+  nombre         String
+  medico         Medico[]
 }
