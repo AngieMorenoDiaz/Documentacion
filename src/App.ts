@@ -6,7 +6,9 @@ import { swaggerSpec } from "./swagger.conf"
 import express,{Application, Request, Response} from "express"
 
 import PacienteRouter from "./routes/Paciente.routes"
-
+import MedicoRouter from "./routes/medico.routes"
+import FormularioRouter from "./routes/formulario.routes"
+import cors from "cors"
 
 /**
  * @author Angie Valentina Moreno
@@ -30,15 +32,17 @@ class App{
             swaggerUi.serve,
             swaggerUi.setup(swaggerSpec)
         )
+        this.app.use(cors())
         this.routes()
     }
     /**
-     * Definir y agregar las tutas de la API con express
+     * Definir y agregar las rutas de la API con express
      */
     
     private routes():void{
         this.app.use("/", PacienteRouter)     
-        
+        this.app.use("/", MedicoRouter)  
+        this.app.use ("/", FormularioRouter)
     }
     
     public start():void{
