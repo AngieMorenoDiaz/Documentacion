@@ -6,7 +6,7 @@
 //Importar bibliotecas
 
 import Request from "supertest"
-import App from "../src/App"
+import App from "../App"
 
 describe (
     "GET /",
