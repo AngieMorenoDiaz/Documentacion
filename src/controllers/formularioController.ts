@@ -12,7 +12,7 @@ class FormularioController {
 
       if (miEsquema.definitions[formulario]){
         res.json (miEsquema.definitions[formulario])
-        } else{
+        }else{
             res.status (400)
             res.json ({error:"No se encontró el formulario ${formulario}"})
         }
