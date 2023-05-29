@@ -1,14 +1,17 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import express,{ Router, Request, Response } from "express"
+import jwt from "jsonwebtoken"
+
 const router: Router= Router()
 
 router.get(
     "/login",
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    
     (req:Request, res: Response)=>{
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        
         const payload={
-            id:"User_Id",
+            id:"user_id",
             username:"Angie"
         }
 
@@ -16,8 +19,12 @@ router.get(
             expiresIn:"2h"
         }
 
-        const secretKey="Gato negro"
-
-
-    }
+        const secretKey= process.env.SECRET_KEY
+        if(typeof secretKey=="string"){
+        const token= jwt.sign(payload, secretKey, options)
+        res.json([token])
+        }
+        }
 )
+
+export default router
